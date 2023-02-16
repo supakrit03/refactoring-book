@@ -1,0 +1,12 @@
+[
+  {
+    "customer": "BigCo",
+
+    "performances": [
+      {
+        "playID": "refactor",
+        "audience": 20
+      }
+    ]
+  }
+]
