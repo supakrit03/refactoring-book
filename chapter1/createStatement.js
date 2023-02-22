@@ -6,6 +6,7 @@ module.exports = function createStatementData(invoice, plays) {
   statementData.totalVolumeCredits = totalVolumeCredits(statementData);
   return statementData;
 
+  //Extract Function
   function enrichPerformance(aPerformance) {
     const calculator = createPerformanceCalculator(
       aPerformance,
@@ -19,12 +20,17 @@ module.exports = function createStatementData(invoice, plays) {
     return result;
   }
 
+  //Extract Function
   function playFor(aPerformance) {
     return plays[aPerformance.playID];
   }
+
+  //Extract Function
   function totalAmount(data) {
     return data.performances.reduce((total, p) => total + p.amount, 0);
   }
+
+  //Extract Function
   function totalVolumeCredits(data) {
     return data.performances.reduce((total, p) => total + p.volumeCredits, 0);
   }
@@ -43,6 +49,7 @@ function createPerformanceCalculator(aPerformance, aPlay) {
   }
 }
 
+//Replace Conditional with Polymorphism
 class PerformanceCalculator {
   constructor(aPerformance, aPlay) {
     this.performance = aPerformance;
